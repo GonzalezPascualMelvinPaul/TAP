@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ejercicio1" language="groovy" pageWidth="612" pageHeight="792" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="f48946fb-fd6f-472b-b60c-0572a16a1af7">
+	<property name="ireport.zoom" value="1.1000000000000008"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Text Body"/>
+	<queryString>
+		<![CDATA[select cliente.cif,cliente.nombre,cliente.direccion,cliente.telefono1,cliente.telefono2,servicios.fecha,servicios.tipo,servicios.cantidad
+from "manempsa"."cliente" cliente,"manempsa"."servicios" servicios
+where cliente.cif='B11223212' and cliente.cif=servicios.cif
+order by servicios.fecha asc;]]>
+	</queryString>
+	<field name="cif" class="java.lang.String"/>
+	<field name="nombre" class="java.lang.String"/>
+	<field name="direccion" class="java.lang.String"/>
+	<field name="telefono1" class="java.lang.String"/>
+	<field name="telefono2" class="java.lang.String"/>
+	<field name="fecha" class="java.sql.Date"/>
+	<field name="tipo" class="java.lang.String"/>
+	<field name="cantidad" class="java.lang.Integer"/>
+	<title>
+		<band height="44" splitType="Stretch">
+			<staticText>
+				<reportElement mode="Opaque" x="84" y="0" width="417" height="34" backcolor="#CCCCCC" uuid="0e1b60c6-756c-4c13-a0a8-baf2558e1578"/>
+				<textElement textAlignment="Center">
+					<font size="24" isBold="true"/>
+				</textElement>
+				<text><![CDATA[NOTA DE SERVICIOS SEGASA]]></text>
+			</staticText>
+			<line>
+				<reportElement x="84" y="34" width="417" height="1" uuid="85802c2c-7087-4780-93f8-0bf973689155"/>
+			</line>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="151" splitType="Stretch">
+			<rectangle>
+				<reportElement x="20" y="15" width="283" height="131" uuid="bebaa04c-b8df-407f-8262-166b39bd951e"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="100" y="17" width="123" height="20" uuid="2af2f17c-42dd-4ccd-9dd6-b82b3aaecd32"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="14"/>
+				</textElement>
+				<text><![CDATA[Ficha del Cliente.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="23" y="37" width="100" height="20" uuid="54bec40d-62a8-4b14-a2c7-882570eca8e3"/>
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
+				<text><![CDATA[CIF:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="23" y="57" width="100" height="20" uuid="4d9f6e80-361d-48ca-a324-d282b1d58cc3"/>
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
+				<text><![CDATA[NOMBRE:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="23" y="77" width="100" height="20" uuid="05765176-ac34-4211-96b7-932f48ccdb3d"/>
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
+				<text><![CDATA[DIRECCION:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="23" y="97" width="100" height="20" uuid="46b2777b-21ce-43c2-a65b-d99373d93afc"/>
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
+				<text><![CDATA[TELEFONO 1:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="23" y="117" width="100" height="20" uuid="5fdca3a4-8da5-4181-bf30-d8518d48ec60"/>
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
+				<text><![CDATA[TELEFONO 2:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="184" y="37" width="119" height="20" uuid="a00584dc-f146-4617-90e8-05e15c9af6b0"/>
+				<textFieldExpression><![CDATA[$F{cif}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="184" y="57" width="119" height="20" uuid="8d593cf5-74a8-4c29-92ef-afa1d22b4f1b"/>
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nombre}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="184" y="77" width="119" height="20" uuid="9ab1d23e-062b-4798-abbf-a8f78c527a15"/>
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{direccion}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="184" y="97" width="119" height="20" uuid="b2ae95ba-4d0d-4fd3-a8aa-87f87044f5d1"/>
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{telefono1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="184" y="117" width="119" height="20" uuid="510f9800-1190-4992-9494-9a2f45f51c12"/>
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{telefono2}]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement x="334" y="15" width="203" height="131" uuid="ddd520db-6643-4baa-b5dd-2207f081d1c3"/>
+				<imageExpression><![CDATA["C:\\Users\\Melvin\\Desktop\\Quinto-Semestre\\Topicos avanzados de programacion\\Guias4ta unidad\\Lenguaje46-50\\Ejercicios46-50\\src\\paqueteprincipal\\png-clipart-logo-organization-business-service-trade-business-building-company.png"]]></imageExpression>
+			</image>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="39" splitType="Stretch">
+			<staticText>
+				<reportElement x="39" y="15" width="110" height="20" uuid="7f379632-797b-4069-9713-0ed6757ccc8d"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Fecha del Servicio]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="234" y="15" width="100" height="20" uuid="1124260e-2b00-40ca-b381-47322e699d9f"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Tipo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="417" y="15" width="100" height="20" uuid="c21be17e-470c-47b4-94f3-fe88f8c59a5c"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Cantidad]]></text>
+			</staticText>
+			<line>
+				<reportElement x="39" y="35" width="478" height="1" uuid="726d1caf-ad74-4fa7-b593-82e4d914bd67"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="22" splitType="Stretch">
+			<textField>
+				<reportElement x="39" y="0" width="109" height="20" uuid="4350f742-a85f-4fea-a8b2-5c2e75f67bbe"/>
+				<textFieldExpression><![CDATA[$F{fecha}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="234" y="0" width="100" height="20" uuid="0b96e21a-a0bf-4dfc-8526-56fdc8fbd3b8"/>
+				<textFieldExpression><![CDATA[$F{tipo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="417" y="0" width="100" height="20" uuid="fc065ec5-5d20-4374-8f81-1bab3ccacb6e"/>
+				<textFieldExpression><![CDATA[$F{cantidad}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="17">
+			<line>
+				<reportElement x="39" y="11" width="478" height="1" uuid="2213d5cb-a0c3-49a2-9e1d-31305c814a96"/>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="110">
+			<staticText>
+				<reportElement x="203" y="0" width="183" height="20" uuid="89fca244-916f-4df3-b3f1-d57174f7b63c"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[MANEMPSA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="203" y="20" width="183" height="20" uuid="1926b4da-4750-47db-ae2e-7d59d1c9657a"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Mantenimiento Integral a Empresas]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="203" y="81" width="183" height="20" uuid="7f6306f6-af38-4a94-86b8-ccb818ca7f0e"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[11404 Jerez (Cádiz)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="203" y="61" width="183" height="20" uuid="dcdb7b3d-5b41-4a6d-b00f-fd0d6b9292f1"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Polígono Industrial Norte, C/ Bonanza 3]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+</jasperReport>
